@@ -1,3 +1,86 @@
 body {
-  background: peachpuff;
+  background: silver;
 }
+
+
+.container {
+  background-color: silver;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  row-gap: 10px;
+  text-align: center;
+}
+
+.container div {
+  background-color: rgb(202, 243, 140);
+  border: 1px solid black;
+}
+
+.container div:hover {
+  animation: fadeIn 2s;
+}
+
+.a {
+  width: 100vw;
+  height: 20vw;
+  border-radius: 10px;
+  
+}
+
+.b, .c, .d, .e, .f, .g {
+  height: 25vw;
+  width: 25vw;
+  border-radius: 10px;
+}
+
+
+/*having issues here*/
+
+.h {
+  width: 100vw;
+  height: 40vh;
+  border-radius: 10px;
+}
+
+
+@media screen and (min-width: 600px){
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .a, .b, .c, .d, .e, .f, .g, .h {
+    width: auto;
+    height: auto;
+  }
+  .a {
+    grid-column: 1/5;
+    grid-row: 1;
+    height: 20vh;
+  }
+  .b, .c, .d {
+    grid-row: 2;
+    height: 30vh;
+    width: 20vw;
+  }
+  .e, .f, .g{
+    grid-row: 3;
+    height: 30vh;
+    width: 20vw;
+  }
+  .h {
+    grid-column: 4;
+    grid-row: 2/4;
+    width: 30vw;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
